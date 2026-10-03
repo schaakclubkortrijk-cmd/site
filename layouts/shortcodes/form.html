@@ -1,0 +1,30 @@
+{{- $kind := .Get "type" -}}
+{{- $endpoint := cond (eq $kind "member") site.Params.memberFormEndpoint site.Params.contactFormEndpoint -}}
+{{- if $endpoint -}}
+<form class="form" action="{{ $endpoint }}" method="POST">
+  {{ if eq $kind "member" -}}
+  <label>Familienaam * <input name="familienaam" required></label>
+  <label>Voornaam * <input name="voornaam" required></label>
+  <label>Adres * <input name="adres" required></label>
+  <label>E-mail * <input type="email" name="email" required></label>
+  <label>Telefoon * <input type="tel" name="telefoon" required></label>
+  <label>Geboortedatum * <input type="date" name="geboortedatum" required></label>
+  <label>Geboorteplaats * <input name="geboorteplaats" required></label>
+  <fieldset><legend>Geslacht *</legend>
+    <label class="inline"><input type="radio" name="geslacht" value="Man" required> Man</label>
+    <label class="inline"><input type="radio" name="geslacht" value="Vrouw"> Vrouw</label>
+  </fieldset>
+  <input type="hidden" name="_subject" value="Nieuwe aanvraag lidmaatschap">
+  {{- else -}}
+  <label>Naam * <input name="naam" required></label>
+  <label>E-mail * <input type="email" name="email" required></label>
+  <label>Telefoon <input type="tel" name="telefoon"></label>
+  <label>Bericht * <textarea name="bericht" rows="6" required></textarea></label>
+  <input type="hidden" name="_subject" value="Bericht via schaakclubkortrijk.be">
+  {{- end }}
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+  <button type="submit">Versturen</button>
+</form>
+{{- else -}}
+<p><em>Het online formulier is momenteel niet beschikbaar. Stuur ons een e-mail of kom langs op vrijdagavond.</em></p>
+{{- end -}}

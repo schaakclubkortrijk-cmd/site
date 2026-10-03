@@ -1,0 +1,14 @@
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="{{ "/" | relURL }}">
+      <img src="{{ "images/logo.png" | relURL }}" alt="" height="52">
+      <span>Koninklijke Schaakclub<br>Groeninge Kortrijk <small>(KSGK)</small></span>
+    </a>
+    <nav>
+      {{ $current := . }}
+      {{ range site.Menus.main }}
+        <a href="{{ .URL }}"{{ if or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  </div>
+</header>

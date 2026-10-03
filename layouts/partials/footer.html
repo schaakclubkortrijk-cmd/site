@@ -1,0 +1,9 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>{{ site.Title }}</strong><br>
+    <a href="https://www.google.com/maps/search/?api=1&query={{ site.Params.address | urlquery }}">{{ site.Params.address }}</a><br>
+    <a href="tel:{{ replace site.Params.phone " " "" }}">{{ site.Params.phone }}</a> ·
+    <a href="{{ site.Params.facebook }}">Facebook</a></p>
+    <p class="muted">© {{ now.Year }} KSGK. Alle rechten voorbehouden.</p>
+  </div>
+</footer>

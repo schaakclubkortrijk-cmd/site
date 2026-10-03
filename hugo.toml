@@ -1,0 +1,45 @@
+baseURL = "https://www.schaakclubkortrijk.be/"
+locale = "nl-BE"
+defaultContentLanguage = "nl"
+title = "Koninklijke Schaakclub Groeninge Kortrijk (KSGK)"
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[params]
+  description = "Koninklijke Schaakclub Groeninge Kortrijk: clubavond, opleiding en clubkampioenschap in Kasteel Heule."
+  address = "Heulsekasteelstraat 1, 8501 Kortrijk"
+  phone = "+32 497 48 24 36"
+  facebook = "https://www.facebook.com/schaakclubkortrijk"
+  # Formulieren: maak een gratis formulier op https://formspree.io en plak hier de URL
+  # (bv. "https://formspree.io/f/abcdwxyz"). Leeg = formulier toont enkel e-mailadres.
+  contactFormEndpoint = ""
+  memberFormEndpoint = ""
+
+# Menu: pas hieronder aan (weight = volgorde).
+
+[[menus.main]]
+  name = "Home"
+  url = "/"
+  weight = 10
+[[menus.main]]
+  name = "Kalender"
+  pageRef = "/kalender"
+  weight = 20
+[[menus.main]]
+  name = "Clubkampioenschap"
+  pageRef = "/clubkampioenschap"
+  weight = 30
+[[menus.main]]
+  name = "Opleiding"
+  pageRef = "/opleiding"
+  weight = 40
+[[menus.main]]
+  name = "Lid worden"
+  pageRef = "/lid-worden"
+  weight = 50
+[[menus.main]]
+  name = "Contact/Info"
+  pageRef = "/contact"
+  weight = 60
+
+[markup.goldmark.renderer]
+  unsafe = true
