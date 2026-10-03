@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article class="content">
   <h1>{{ .Title }}</h1>
-  {{ with .Params.image }}<img class="hero" src="{{ . | relURL }}" alt="{{ $.Params.imageAlt }}">{{ end }}
+  {{ with .Params.image }}<img class="hero" src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $.Params.imageAlt }}">{{ end }}
   {{ .Content }}
 </article>
 {{ end }}

@@ -18,7 +18,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
 
 [[menus.main]]
   name = "Home"
-  url = "/"
+  pageRef = "/"
   weight = 10
 [[menus.main]]
   name = "Kalender"

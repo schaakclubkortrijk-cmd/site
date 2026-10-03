@@ -23,7 +23,10 @@ jobs:
         with:
           hugo-version: "0.167.0"
           extended: true
-      - run: hugo --minify
+      - id: pages
+        uses: actions/configure-pages@v5
+      # base_url is the github.io address now, and the custom domain once it is configured
+      - run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
